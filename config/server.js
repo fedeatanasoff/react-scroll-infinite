@@ -5,6 +5,5 @@ module.exports = {
   SECRET:
     process.env.SECRET ||
     "8ba3d8a0cc98aac0771a4be6dda5722a3250718ef4eab821d6c634135fbd8a10",
-  CALLBACK_URL:
-    process.env.CALLBACK_URL || "http://localhost:3000"
+  CALLBACK_URL: process.env.CALLBACK_URL || "http://localhost:3000"
 };
