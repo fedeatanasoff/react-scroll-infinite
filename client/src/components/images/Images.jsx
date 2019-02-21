@@ -7,9 +7,7 @@ export class Images extends Component {
       <div className="row">
         <div className="col-md-12">
           <div className="card-columns">
-            <div className="card">
-              <Image />
-            </div>
+            <Image />
           </div>
         </div>
       </div>

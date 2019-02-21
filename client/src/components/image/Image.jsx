@@ -35,7 +35,14 @@ export class Image extends Component {
         loader={<h4> cargando...</h4>}
       >
         {this.state.images.map(imagen => (
-          <img key={imagen.id} src={imagen} alt="" />
+          <div className="card">
+            <img
+              key={imagen.id}
+              src={imagen.urls.regular}
+              alt=""
+              width="100%"
+            />
+          </div>
         ))}
       </InfiniteScroll>
     );
