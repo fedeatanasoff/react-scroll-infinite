@@ -22,7 +22,9 @@ export class Image extends Component {
     this.setState({ start: this.state.start + count });
     axios
       .get(`api/photos?count=${count}&start=${start}`)
-      .then(res => this.setState({ images: res.data }));
+      .then(res =>
+        this.setState({ images: this.state.images.concat(res.data) })
+      );
   };
 
   render() {
@@ -34,14 +36,9 @@ export class Image extends Component {
         hasMore={true}
         loader={<h4> cargando...</h4>}
       >
-        {this.state.images.map(imagen => (
-          <div className="card">
-            <img
-              key={imagen.id}
-              src={imagen.urls.regular}
-              alt=""
-              width="100%"
-            />
+        {this.state.images.map((imagen, index) => (
+          <div className="card" key={index}>
+            <img src={imagen.urls.regular} alt="" width="100%" />
           </div>
         ))}
       </InfiniteScroll>
